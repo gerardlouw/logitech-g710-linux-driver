@@ -19,8 +19,8 @@ if the compilation was successfull, you will now have a new kernel module in the
 The next step is to install the kernel module:
 
 <pre>
-sudo make install
-sudo depmod -a
+sudo dkms add src/kernel
+sudo dkms install hid-lg-g710-plus/0.1
 </pre>
 
 At this point the generic driver will still take control. The simple fix for that issue is to copy the 90-logitech-g710-plus.rules file from the misc folder to /etc/udev/rules.d/:
